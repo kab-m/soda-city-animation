@@ -1,0 +1,129 @@
+/*
+Title: Soda City Stylesheet
+Author: Tommaso Bacci @kab-m
+Date: 11/02/2022
+Description: CSS for Soda City animation.html
+*/
+/* gear 1 animation */
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+/* gear 2 animation */
+@keyframes antirotation {
+  from {
+    transform: rotate(359deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+/* smoke animation */
+@keyframes fumo {
+  0%   {left:0px; top:0px;}
+  12.5%{left:2.5px; top:-2.5px;}
+  25%  {left:5px; top:-5px;}
+  37.5%{left:-2.5px; top:2.5px;}
+  50%  {left:0px; top:5px;}
+  62.5%{left:-2.5px; top:2.5;}
+  75%  {left:-5px; top:5px;}
+  87.5%{left:-2.5px; top:2.5px;}
+  100% {left:0px; top:0px;}
+}
+/* title animation */
+@keyframes titlecolor {
+  0% {color:#000000;}
+  20% {color:#292300;}
+  40% {color:#544801;}
+  60% {color:#806d01;}
+  80% {color:#ab9202;}
+  100% {color:#d6b700;}
+}
+/* HTML styling */
+body{
+  margin: 0;
+  background-image: url("imgs/solvay.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+h1{
+  font-family: 'Kaushan Script', cursive;
+  text-align:center;
+  font-size:100px;
+  margin:0;
+  padding: 0;
+  color: #000000;
+  animation-name: titlecolor;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+}
+.cont{
+  width:400px; height:550px;
+  margin:auto;
+  overflow: visible;
+}
+.fumo{
+  height:200px; width:140px;
+
+  background-repeat: no-repeat;
+  margin-left: 265px;
+  position: relative;
+
+}
+/* smoke aniamtion class */
+.anim{
+  background-image: url('imgs/fumo.png');
+  animation-name: fumo;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-direction: alternate;
+}
+.fabbrica{
+  width:300px; height:300px;
+  background-image: url('imgs/fabbrica.png');
+  background-repeat: no-repeat;
+  background-position: center; background-size: contain;
+  position: relative; left: 50px; top:-50px;
+}
+.ing{
+  float: left;
+  width: 200px;height:200px;
+  background-image: url('imgs/ingranaggio.png');
+  background-repeat: no-repeat;
+  background-position: center; background-size: contain;
+  position: relative; top:-100px;
+}
+/* gear 1 animation class */
+.ing1{
+  animation: rotation 5s infinite linear;
+}
+/* gear 2 animation class */
+.ing2{
+  animation: antirotation 5s infinite linear;
+}
+.ingCont::after{
+  clear: both;
+}
+#btn{
+  font-family: 'Kaushan Script', cursive;
+  font-size: 60px;
+  text-align: center;
+  height:100px; width: 200px;line-height: 100px;
+  border: 5px solid black;
+  clear: both;
+  margin:auto;
+  position: relative; top:-60px;
+}
+footer{
+  text-align: center;
+  font-family: 'Kaushan Script', cursive;
+  font-size: 15px;
+}
